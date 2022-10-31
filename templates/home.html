@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset="utf-8" />
+  
+  
+  <link type="text/css" rel="stylesheet" href="static/style.css">
+ 
+  <title>TTSL</title>
+  <link rel="icon" type="image/x-icon" href="/static/logo.png">
+  <style>
+  body {
+    background-image: url('/static/back111.jpg');
+    background-attachment:scroll;
+    background-repeat:no-repeat;
+    background-position: top 0px right 30px left -500px bottom 200px;
+    background-size: cover;
+   
+  }
+  </style>
+
+
+  
+  
+
+</head>
+
+<h1 style="color:#002E94; text-shadow:1px 1px 3px #FF0000, 0 0 5px #0000FF;" ><i>TEXT TO SIGN LANGUAGE</i> </h1><style>
+  h1{
+      text-align: center;
+      color: #967E76;
+   
+  }
+</style>
+
+  <div class="centered">
+    <form action="/process_query" method="post">
+      
+      <h1  id="header" style="color: #355764; text-shadow: 0 0 3px #FF0000;">Enter your text:</h1>
+      <h1 id="max" style="color: #355764;">(Maximun Length is 40)</h1>
+
+
+      
+
+
+
+
+
+
+
+      
+      <div id="textenter">
+      <input type="text" name="user_input" maxlength="45" ><br>
+    </div>
+    </form>
+  </div>
+  
+<div id="align">
+  <div class="filled">
+ 
+    {% if same|length == 0%}
+    {% else %}
+    <div id="translates">
+
+    <h1 id="list" style="color: #355764; text-shadow: 0 0 3px #FF0000;">
+      Translates to:</h1>
+     </div>
+     
+    {% for s in same %}
+    {% if "static/" in s%}
+    
+       <img src={{s}} class="beside">
+    {% else %}
+    
+    <p class="signlanguage beside"> {{ s }} </p>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+ 
+  
+  </div>
+</div>
+</div>
+</body>
+
+</html>
