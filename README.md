@@ -8,6 +8,6 @@
 
 
 Done by:
-Mani
-Sandeep
+Mani,
+Sandeep and
 Jaamakai
